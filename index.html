@@ -1,1 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildvue — Wildlife the way you saw it</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #4A7C59; --green-forest: #4A7C59; --green-mid: #4A7C59;
+    --green-accent: #4A7C59; --amber: #C4A35A; --amber-light: #E8D5A3;
+    --cream: #FAF5E8; --cream-mid: #F0EAD6; --text-dark: #1A2E1E;
+    --text-mid: #4A5C4D; --text-light: #8A9B8D; --white: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Plus Jakarta Sans", sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
 
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(46,94,58,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(250,245,232,0.08); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-mark { width: 38px; height: 38px; background: rgba(250,245,232,0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; overflow: hidden; }
+  .logo-img-placeholder { width: 38px; height: 38px; border-radius: 10px; background: rgba(250,245,232,0.12); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; letter-spacing: 0.05em; color: rgba(255,255,255,0.5); text-transform: uppercase; text-align: center; line-height: 1.3; flex-shrink: 0; }
+  .logo-img-placeholder-lg { width: 52px; height: 52px; border-radius: 14px; background: rgba(232,213,163,0.12); border: 1px dashed rgba(232,213,163,0.3); display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 600; letter-spacing: 0.05em; color: rgba(255,255,255,0.3); text-transform: uppercase; text-align: center; line-height: 1.3; flex-shrink: 0; }
+  .footer-logo-mark { width: 34px; height: 34px; border-radius: 9px; background: rgba(232,213,163,0.12); display: flex; align-items: center; justify-content: center; font-size: 18px; overflow: hidden; }
+  .nav-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--cream); }
+  .nav-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: rgba(250,245,232,0.7); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta { background: var(--cream) !important; color: var(--text-dark) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; }
+
+  /* HERO */
+  .hero { min-height: 100vh; padding: 130px 64px 100px; display: flex; align-items: center; background: linear-gradient(to bottom, #2E5E3A, #3D7049, #4A7C59); }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(250,245,232,0.12); border: 1px solid rgba(250,245,232,0.25); border-radius: 100px; padding: 6px 14px 6px 10px; font-size: 12px; font-weight: 600; color: var(--cream); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.5s ease both; }
+  .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber-light); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);} }
+  .hero-h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(44px,5vw,64px); line-height: 1.05; letter-spacing: -0.03em; color: var(--cream); margin-bottom: 22px; animation: fadeUp 0.5s ease 0.1s both; }
+  .hero-h1 em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .hero-sub { font-size: 16px; line-height: 1.7; color: rgba(250,245,232,0.7); margin-bottom: 36px; max-width: 480px; animation: fadeUp 0.5s ease 0.2s both; }
+  .hero-form { display: flex; gap: 10px; margin-bottom: 18px; animation: fadeUp 0.5s ease 0.3s both; }
+  .hero-input { padding: 14px 22px; border: 1.5px solid rgba(250,245,232,0.2); border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; color: var(--text-dark); background: var(--cream); outline: none; width: 250px; transition: border-color 0.2s; }
+  .hero-input:focus { border-color: var(--amber-light); }
+  .hero-input::placeholder { color: var(--text-light); }
+  .btn-primary { padding: 14px 28px; background: var(--cream); color: var(--text-dark); border: none; border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.15s; }
+  .btn-primary:hover { background: var(--amber-light); transform: translateY(-1px); }
+  .hero-success { display: none; align-items: center; gap: 8px; background: rgba(250,245,232,0.12); border: 1px solid rgba(250,245,232,0.25); border-radius: 100px; padding: 12px 18px; font-size: 14px; font-weight: 500; color: var(--cream); margin-bottom: 18px; }
+  .hero-success.show { display: inline-flex; }
+  .app-row { display: flex; gap: 10px; align-items: center; animation: fadeUp 0.5s ease 0.4s both; }
+  .app-btn { display: flex; align-items: center; gap: 9px; padding: 10px 16px; background: rgba(250,245,232,0.12); border: 1px solid rgba(250,245,232,0.2); color: var(--cream); border-radius: 10px; text-decoration: none; opacity: 0.7; pointer-events: none; }
+  .app-btn svg { width: 18px; height: 18px; fill: var(--cream); flex-shrink: 0; }
+  .app-btn-text { line-height: 1.2; }
+  .app-btn-text span { display: block; font-size: 9px; opacity: 0.7; letter-spacing: 0.06em; text-transform: uppercase; }
+  .app-btn-text strong { display: block; font-size: 13px; font-weight: 600; }
+  .available-note { font-size: 11px; color: rgba(250,245,232,0.5); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  /* HERO BA */
+  .hero-right { animation: fadeUp 0.6s ease 0.2s both; }
+  .hero-ba { border-radius: 22px; overflow: hidden; box-shadow: 0 24px 64px rgba(28,58,34,0.15), 0 4px 16px rgba(0,0,0,0.06); background: #1a1a1a; }
+  .ba-split { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+  .ba-panel { position: relative; overflow: hidden; height: 420px; }
+  .ba-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .ba-ph-b { background: #8a9e88; color: rgba(255,255,255,0.5); }
+  .ba-ph-a { background: #5a8060; color: rgba(255,255,255,0.6); }
+  .ba-label { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); padding: 5px 14px; border-radius: 100px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+  .ba-label-b { background: rgba(0,0,0,0.55); backdrop-filter: blur(6px); color: rgba(255,255,255,0.9); }
+  .ba-label-a { background: var(--cream); color: var(--text-dark); }
+  .ba-arrow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 10; width: 36px; height: 36px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+  .ba-arrow svg { width: 16px; height: 16px; }
+
+  /* EXAMPLES SECTION */
+  .ba-section { background: var(--white); padding: 100px 64px; }
+  .ba-inner { max-width: 1200px; margin: 0 auto; }
+  .ba-header { margin-bottom: 52px; }
+  .ba-h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(34px,4vw,52px); letter-spacing: -0.025em; line-height: 1.1; color: var(--text-dark); margin-bottom: 14px; }
+  .ba-h2 em { font-style: italic; font-weight: 400; color: var(--green-accent); }
+  .ba-sub { font-size: 15px; line-height: 1.65; color: var(--text-mid); max-width: 500px; }
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .ba-card { border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(28,58,34,0.1); background: var(--green-deep); }
+  .ba-card-split { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+  .ba-card-panel { position: relative; overflow: hidden; height: 440px; }
+  .ba-card-ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+  .ph-leopard-b { background: #8a9e88; color: rgba(255,255,255,0.45); }
+  .ph-leopard-a { background: #5a8060; color: rgba(255,255,255,0.55); }
+  .ph-lion-b { background: #b8a070; color: rgba(255,255,255,0.45); }
+  .ph-lion-a { background: #c8b080; color: rgba(255,255,255,0.55); }
+  .ph-hippo-b { background: #708898; color: rgba(255,255,255,0.45); }
+  .ph-hippo-a { background: #507888; color: rgba(255,255,255,0.55); }
+  .ba-card-footer { padding: 16px 20px; background: var(--green-deep); display: flex; align-items: center; justify-content: space-between; }
+  .ba-card-name { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; color: var(--white); letter-spacing: -0.01em; }
+  .ba-card-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-accent); background: rgba(74,124,89,0.12); padding: 5px 12px; border-radius: 100px; }
+  .ba-card-wide { grid-column: 1 / -1; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 32px rgba(28,58,34,0.1); background: var(--green-deep); }
+  .ba-card-wide-split { display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+  .ba-card-wide-panel { position: relative; overflow: hidden; height: 340px; }
+
+  /* HOW IT WORKS */
+  .hiw-section { background: var(--cream); padding: 100px 64px; }
+  .hiw-inner { max-width: 1200px; margin: 0 auto; }
+  .section-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-accent); margin-bottom: 14px; display: block; }
+  .section-h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(32px,3.5vw,48px); letter-spacing: -0.02em; line-height: 1.1; color: var(--text-dark); margin-bottom: 14px; }
+  .section-h2 em { font-style: italic; font-weight: 400; color: var(--green-accent); }
+  .section-sub { font-size: 15px; line-height: 1.65; color: var(--text-mid); max-width: 500px; margin-bottom: 56px; }
+  .steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 36px; left: calc(16.66% + 16px); right: calc(16.66% + 16px); height: 1.5px; background: linear-gradient(to right, var(--green-accent), var(--green-forest)); opacity: 0.22; }
+  .step { background: var(--white); border-radius: 20px; padding: 36px 30px; border: 1px solid rgba(58,125,68,0.08); transition: transform 0.2s, box-shadow 0.2s; }
+  .step:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,58,34,0.1); }
+  .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--green-forest); color: var(--white); display: flex; align-items: center; justify-content: center; font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; margin-bottom: 22px; }
+  .step:nth-child(2) .step-num { background: var(--green-accent); color: var(--white); }
+  .step:nth-child(3) .step-num { background: var(--green-mid); }
+  .step-icon { font-size: 26px; margin-bottom: 14px; }
+  .step-h3 { font-family: "Fraunces", serif; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 10px; }
+  .step-p { font-size: 14px; line-height: 1.65; color: var(--text-mid); }
+
+  /* WAITLIST */
+  .waitlist-section { background: var(--green-deep); padding: 100px 64px; position: relative; overflow: hidden; }
+  .waitlist-section::before { content: ""; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,162,69,0.07) 0%, transparent 70%); pointer-events: none; }
+  .waitlist-section::after { content: ""; position: absolute; bottom: -150px; left: -150px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(58,125,68,0.1) 0%, transparent 70%); pointer-events: none; }
+  .waitlist-inner { max-width: 580px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+  .waitlist-owl { font-size: 52px; display: block; margin-bottom: 24px; }
+  .waitlist-h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(32px,4vw,52px); letter-spacing: -0.025em; line-height: 1.1; color: var(--white); margin-bottom: 14px; }
+  .waitlist-h2 em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .waitlist-sub { font-size: 16px; line-height: 1.65; color: rgba(255,255,255,0.5); margin-bottom: 40px; }
+  .waitlist-form { display: flex; gap: 10px; justify-content: center; margin-bottom: 14px; }
+  .waitlist-input { flex: 1; max-width: 300px; padding: 15px 22px; border: 1.5px solid rgba(255,255,255,0.12); border-radius: 100px; background: rgba(255,255,255,0.07); font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; color: var(--white); outline: none; transition: border-color 0.2s; }
+  .waitlist-input:focus { border-color: var(--amber-light); }
+  .waitlist-input::placeholder { color: rgba(255,255,255,0.28); }
+  .btn-amber { padding: 15px 28px; background: var(--amber-light); color: var(--text-dark); border: none; border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+  .btn-amber:hover { background: var(--cream); transform: translateY(-1px); }
+  .waitlist-success { display: none; align-items: center; justify-content: center; gap: 8px; background: rgba(58,125,68,0.2); border: 1px solid rgba(58,125,68,0.3); border-radius: 100px; padding: 12px 20px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 14px; }
+  .waitlist-success.show { display: inline-flex; }
+  .waitlist-note { font-size: 12px; color: rgba(255,255,255,0.22); }
+  .app-row-dark { display: flex; gap: 12px; justify-content: center; margin-top: 28px; opacity: 0.28; }
+  .app-btn-dark { display: flex; align-items: center; gap: 9px; padding: 10px 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--white); border-radius: 10px; text-decoration: none; pointer-events: none; }
+  .app-btn-dark svg { width: 18px; height: 18px; fill: var(--white); flex-shrink: 0; }
+  .app-btn-dark-text { line-height: 1.2; }
+  .app-btn-dark-text span { display: block; font-size: 9px; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; }
+  .app-btn-dark-text strong { display: block; font-size: 13px; font-weight: 600; }
+
+  /* FAQ */
+  .faq-section { background: var(--cream-mid); padding: 100px 64px; }
+  .faq-inner { max-width: 1200px; margin: 0 auto; }
+  .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .faq-item { background: var(--white); border-radius: 16px; border: 1px solid rgba(58,125,68,0.07); overflow: hidden; transition: box-shadow 0.2s; }
+  .faq-item:hover { box-shadow: 0 8px 24px rgba(28,58,34,0.08); }
+  .faq-item.open { box-shadow: 0 8px 24px rgba(28,58,34,0.08); }
+  .faq-q { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: var(--text-dark); line-height: 1.3; padding: 24px 28px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; user-select: none; }
+  .faq-q:hover { color: var(--green-forest); }
+  .faq-icon { width: 22px; height: 22px; border-radius: 50%; background: rgba(58,125,68,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, transform 0.25s; }
+  .faq-icon svg { width: 12px; height: 12px; stroke: var(--green-accent); transition: transform 0.25s; }
+  .faq-item.open .faq-icon { background: var(--green-forest); transform: rotate(0deg); }
+  .faq-item.open .faq-icon svg { stroke: var(--white); transform: rotate(45deg); }
+  .faq-a { font-size: 14px; line-height: 1.65; color: var(--text-mid); max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.25s ease; padding: 0 28px; }
+  .faq-item.open .faq-a { max-height: 200px; padding: 0 28px 22px; }
+
+  /* FOOTER */
+  footer { background: var(--green-deep); padding: 64px 64px 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-brand { max-width: 280px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .footer-logo-mark { width: 34px; height: 34px; background: rgba(232,162,69,0.12); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .footer-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--white); }
+  .footer-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .footer-tagline { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.35); }
+  .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 8px;
+  }
+  .nav-hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE MENU */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cream);
+    z-index: 99;
+    flex-direction: column;
+    padding: 32px 28px 48px;
+    overflow-y: auto;
+    transform: translateY(-12px);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .mobile-menu.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .mobile-menu-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 40px;
+  }
+  .mobile-menu-links li a {
+    display: block;
+    font-family: "Fraunces", serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(58,125,68,0.08);
+    transition: color 0.2s;
+  }
+  .mobile-menu-links li:last-child a {
+    color: var(--green-forest);
+    border-bottom: none;
+  }
+  .mobile-menu-links li a:hover { color: var(--green-accent); }
+  .mobile-menu-apps {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mobile-menu-apps-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  .mobile-app-btn {
+    opacity: 0.5;
+    pointer-events: none;
+    background: rgba(28,43,30,0.07) !important;
+    border: 1px solid rgba(28,43,30,0.12) !important;
+    color: var(--text-dark) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    justify-content: flex-start !important;
+  }
+  .mobile-app-btn svg { fill: var(--text-dark) !important; }
+  .mobile-app-btn .app-btn-dark-text span { color: var(--text-mid) !important; opacity: 1 !important; }
+  .mobile-app-btn .app-btn-dark-text strong { color: var(--text-dark) !important; }
+
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+    body.menu-open { overflow: hidden; }
+  }
+
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 99; width: 44px; height: 44px; border-radius: 50%; background: var(--green-forest); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(28,58,34,0.25); opacity: 0; transform: translateY(12px); transition: opacity 0.25s, transform 0.25s, background 0.2s; pointer-events: none; }
+  .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .scroll-top:hover { background: var(--green-mid); }
+  .scroll-top svg { width: 18px; height: 18px; stroke: var(--white); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+
+  /* ========================= */
+  /* MOBILE                    */
+  /* ========================= */
+  @media (max-width: 768px) {
+
+    /* NAV */
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+
+    /* HERO */
+    .hero { padding: 100px 24px 60px; min-height: auto; }
+    .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero-h1 { font-size: 38px; }
+    .hero-sub { font-size: 15px; max-width: 100%; }
+    .hero-form { flex-direction: column; gap: 10px; }
+    .hero-input { width: 100%; }
+    .btn-primary { width: 100%; text-align: center; padding: 15px 28px; }
+    .app-row { flex-wrap: wrap; }
+    .hero-right { order: -1; }
+    .ba-panel { height: 260px; }
+
+    /* EXAMPLES SECTION */
+    .ba-section { padding: 60px 20px; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .ba-card-panel { height: 280px; }
+    .ba-card-wide-panel { height: 220px; }
+    .ba-card-wide { grid-column: 1; }
+
+    /* HOW IT WORKS */
+    .hiw-section { padding: 60px 20px; }
+    .steps { grid-template-columns: 1fr; gap: 16px; }
+    .steps::before { display: none; }
+    .step { padding: 28px 24px; }
+
+    /* WAITLIST */
+    .waitlist-section { padding: 60px 20px; }
+    .waitlist-form { flex-direction: column; align-items: stretch; gap: 10px; }
+    .waitlist-input { max-width: 100%; }
+    .btn-amber { width: 100%; text-align: center; }
+    .app-row-dark { flex-wrap: wrap; }
+
+    /* FAQ */
+    .faq-section { padding: 60px 20px; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .faq-q { font-size: 15px; padding: 20px 20px; }
+    .faq-a { padding: 0 20px; }
+    .faq-item.open .faq-a { padding: 0 20px 18px; }
+
+    /* FOOTER */
+    footer { padding: 48px 20px 32px; }
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-legal { justify-content: center; flex-wrap: wrap; gap: 16px; }
+
+    /* SCROLL TO TOP */
+    .scroll-top { bottom: 20px; right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="wildvue_logo.webp" alt="Wildvue" class="logo-img-placeholder">
+    <span class="nav-wordmark">Wild<em>vue</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#examples">Examples</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#waitlist" class="nav-cta">Join waitlist</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="#how-it-works" onclick="closeMenu()">How it works</a></li>
+    <li><a href="#examples" onclick="closeMenu()">Examples</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="#waitlist" onclick="closeMenu()">Join waitlist</a></li>
+  </ul>
+  <div class="mobile-menu-apps">
+    <p class="mobile-menu-apps-label">Available at launch</p>
+    <a href="#" class="app-btn-dark mobile-app-btn">
+      <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04l-.06.17zm-5.3-15.06c.66-.81 1.74-1.44 2.64-1.44.12 1.03-.29 2.06-.93 2.8-.63.74-1.65 1.32-2.66 1.24-.13-1 .37-2.03.95-2.6z"/></svg>
+      <div class="app-btn-dark-text"><span>Download on the</span><strong>App Store</strong></div>
+    </a>
+    <a href="#" class="app-btn-dark mobile-app-btn">
+      <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.367c.57.33.926.924.926 1.66 0 .736-.355 1.33-.926 1.66l-1.952 1.129-2.521-2.521 2.521-2.52 1.952 1.128zM5.864 2.658L16.8 9.01l-2.302 2.302-8.635-8.654z"/></svg>
+      <div class="app-btn-dark-text"><span>Get it on</span><strong>Google Play</strong></div>
+    </a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge"><div class="badge-dot"></div>Coming soon</div>
+      <h1 class="hero-h1">Your wildlife photos,<br><em>barrier-free.</em></h1>
+      <p class="hero-sub">You paid for the zoo ticket, found the perfect angle, and then the chain-link fence ruined the shot. Whether it's the zoo, aquarium, safari, or wildlife park, Wildvue fixes it instantly with one tap. No editing skills needed.</p>
+      <div class="hero-form" id="heroFormRow">
+        <input type="email" class="hero-input" id="heroEmail" placeholder="Your email address" autocomplete="email">
+        <button class="btn-primary" onclick="submitHero()">Join the waitlist</button>
+      </div>
+      <div class="hero-success" id="heroSuccess">&#x1F389; You're on the list! We'll be in touch.</div>
+      <div class="app-row">
+        <a href="#" class="app-btn">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04l-.06.17zm-5.3-15.06c.66-.81 1.74-1.44 2.64-1.44.12 1.03-.29 2.06-.93 2.8-.63.74-1.65 1.32-2.66 1.24-.13-1 .37-2.03.95-2.6z"/></svg>
+          <div class="app-btn-text"><span>Download on the</span><strong>App Store</strong></div>
+        </a>
+        <a href="#" class="app-btn">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.367c.57.33.926.924.926 1.66 0 .736-.355 1.33-.926 1.66l-1.952 1.129-2.521-2.521 2.521-2.52 1.952 1.128zM5.864 2.658L16.8 9.01l-2.302 2.302-8.635-8.654z"/></svg>
+          <div class="app-btn-text"><span>Get it on</span><strong>Google Play</strong></div>
+        </a>
+        <span class="available-note">Available at launch</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-ba">
+        <div class="ba-split">
+          <div class="ba-panel">
+            <img src="amur_leopard_before.webp" alt="Before" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="ba-label ba-label-b">Before</div>
+          </div>
+          <div class="ba-panel">
+            <img src="amur_leopard_after.webp" alt="After" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div class="ba-label ba-label-a">After</div>
+          </div>
+          <div class="ba-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1C2B1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ba-section" id="examples">
+  <div class="ba-inner">
+    <div class="ba-header reveal">
+      <span class="section-tag">Real results</span>
+      <h2 class="ba-h2">See the difference<br>for <em>yourself</em></h2>
+      <p class="ba-sub">Real photos taken at real wildlife venues. No filters, manual editing, or Photoshop required. Just Wildvue doing its thing.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal rd1">
+        <div class="ba-card-split">
+          <div class="ba-card-panel"><img src="amur_leopard_before.webp" alt="Before" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-b">Before</div></div>
+          <div class="ba-card-panel"><img src="amur_leopard_after.webp" alt="After" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-a">After</div></div>
+        </div>
+        <div class="ba-card-footer"><span class="ba-card-name">Amur Leopard</span><span class="ba-card-tag">Wire mesh removed</span></div>
+      </div>
+      <div class="ba-card reveal rd2">
+        <div class="ba-card-split">
+          <div class="ba-card-panel"><img src="african_lion_before.webp" alt="Before" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-b">Before</div></div>
+          <div class="ba-card-panel"><img src="african_lion_after.webp" alt="After" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-a">After</div></div>
+        </div>
+        <div class="ba-card-footer"><span class="ba-card-name">African Lion</span><span class="ba-card-tag">Fence removed</span></div>
+      </div>
+      <div class="ba-card-wide reveal">
+        <div class="ba-card-wide-split">
+          <div class="ba-card-wide-panel"><img src="hippo_before.webp" alt="Before" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-b">Before</div></div>
+          <div class="ba-card-wide-panel"><img src="hippo_after.webp" alt="After" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"><div class="ba-label ba-label-a">After</div></div>
+        </div>
+        <div class="ba-card-footer"><span class="ba-card-name">Hippopotamus</span><span class="ba-card-tag">Glass + debris removed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hiw-section" id="how-it-works">
+  <div class="hiw-inner">
+    <span class="section-tag reveal">How it works</span>
+    <h2 class="section-h2 reveal">Three taps.<br><em style="font-weight:700;">Zero barriers.</em></h2>
+    <p class="section-sub reveal">No editing skills required. You take the photo, Wildvue handles the rest.</p>
+    <div class="steps">
+      <div class="step reveal rd1">
+        <div class="step-num">1</div>
+        <div class="step-icon">&#x1F4F8;</div>
+        <h3 class="step-h3">Upload your photo</h3>
+        <p class="step-p">Snap it quick at the zoo, aquarium, safari, wildlife park, or grab one out of your camera roll. Any photo with a fence, glass, mesh, or any other barrier in the way works.</p>
+      </div>
+      <div class="step reveal rd2">
+        <div class="step-num">2</div>
+        <div class="step-icon">&#x2728;</div>
+        <h3 class="step-h3">Wildvue removes the barriers</h3>
+        <p class="step-p">Wildvue analyzes your photo and makes the magic happen in real time. No need to edit yourself, just tap and go.</p>
+      </div>
+      <div class="step reveal rd3">
+        <div class="step-num">3</div>
+        <div class="step-icon">&#x1F33F;</div>
+        <h3 class="step-h3">Share your shot</h3>
+        <p class="step-p">Save it to your camera roll, post it, and send it to the family group chat. Your favorite wildlife photos finally look the way you remember them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist-section" id="waitlist">
+  <div class="waitlist-inner">
+    <img src="wildvue_logo.webp" alt="Wildvue" class="logo-img-placeholder-lg" style="margin: 0 auto 24px;">
+    <h2 class="waitlist-h2">Be first in <em>the wild</em></h2>
+    <p class="waitlist-sub">Drop your email and we'll let you know the moment it's ready to download.</p>
+    <div class="waitlist-form" id="waitlistFormRow">
+      <input type="email" class="waitlist-input" id="waitlistEmail" placeholder="Your email address" autocomplete="email">
+      <button class="btn-amber" onclick="submitWaitlist()">Join the waitlist</button>
+    </div>
+    <div class="waitlist-success" id="waitlistSuccess">&#x1F389; You're on the list! Check your inbox.</div>
+    <p class="waitlist-note">No credit card required. We'll never spam you.</p>
+    <div class="app-row-dark">
+      <a href="#" class="app-btn-dark">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04l-.06.17zm-5.3-15.06c.66-.81 1.74-1.44 2.64-1.44.12 1.03-.29 2.06-.93 2.8-.63.74-1.65 1.32-2.66 1.24-.13-1 .37-2.03.95-2.6z"/></svg>
+        <div class="app-btn-dark-text"><span>Download on the</span><strong>App Store</strong></div>
+      </a>
+      <a href="#" class="app-btn-dark">
+        <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.367c.57.33.926.924.926 1.66 0 .736-.355 1.33-.926 1.66l-1.952 1.129-2.521-2.521 2.521-2.52 1.952 1.128zM5.864 2.658L16.8 9.01l-2.302 2.302-8.635-8.654z"/></svg>
+        <div class="app-btn-dark-text"><span>Get it on</span><strong>Google Play</strong></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <span class="section-tag reveal">Questions answered</span>
+    <h2 class="section-h2 reveal">Things people <em>ask us</em></h2>
+    <p class="section-sub reveal">Can't find your answer? Email us at <a href="/cdn-cgi/l/email-protection#e8808d848487a89f81848c9e9d8dc68b8785"><span class="__cf_email__" data-cfemail="ddb5b8b1b1b29daab4b1b9aba8b8f3beb2b0">[email&#160;protected]</span></a></p>
+    <div class="faq-grid">
+      <div class="faq-item reveal rd1"><div class="faq-q" onclick="toggleFaq(this)">What types of barriers can Wildvue remove?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">Fences, cage bars, wire mesh, aquarium glass, safari vehicle windows, you name it. If something is between you and the animal, Wildvue is built to handle it. We're always improving.</p></div>
+      <div class="faq-item reveal rd2"><div class="faq-q" onclick="toggleFaq(this)">Will the animal still look natural?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">Yes. Wildvue is built specifically for wildlife photos, so it understands things like fur texture, feathers, and motion blur. In most cases you genuinely can't tell anything was ever in the way.</p></div>
+      <div class="faq-item reveal rd1"><div class="faq-q" onclick="toggleFaq(this)">Is Wildvue free?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">Yes! There will be a free option with a set of credits each month, perfect for casual use. If you're shooting a lot, the Pro plan gives you unlimited enhancements.</p></div>
+      <div class="faq-item reveal rd2"><div class="faq-q" onclick="toggleFaq(this)">Is my original photo kept private?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">Completely. Your photos are processed and then deleted from our servers within 24 hours. We never use your photos for anything without you explicitly opting in.</p></div>
+      <div class="faq-item reveal rd1"><div class="faq-q" onclick="toggleFaq(this)">Does it work for aquarium photos too?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">Absolutely. Aquarium glass, murky water reflections, debris floating in the tank. Wildvue handles all of it. Some of our favorite before and afters are underwater shots.</p></div>
+      <div class="faq-item reveal rd2"><div class="faq-q" onclick="toggleFaq(this)">When is the app launching?<span class="faq-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></div><p class="faq-a">We're targeting iOS and Android in the coming months. Waitlist members get access before everyone else, with invites going out in batches. Sign up and you'll be near the front of the line.</p></div>
+    </div>
+  </div>
+</section>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="wildvue_logo.webp" alt="Wildvue" class="logo-img-placeholder">
+          <span class="footer-wordmark">Wild<em>vue</em></span>
+        </div>
+        <p class="footer-tagline">Wildlife photography the way you saw it. No fences, no glare, no distractions. Just the wild.</p>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="#examples">Examples</a></li><li><a href="#how-it-works">How it works</a></li><li><a href="#waitlist">Join waitlist</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Press kit</a></li></ul></div>
+      <div class="footer-col"><h4>Follow us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">X / Twitter</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Wildvue. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+  window.addEventListener("scroll", () => {
+    document.getElementById("scrollTop").classList.toggle("visible", window.scrollY > 400);
+  });
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('navHamburger');
+    const isOpen = menu.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      menu.classList.add('open');
+      btn.classList.add('open');
+      document.body.classList.add('menu-open');
+    }
+  }
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('navHamburger');
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
+  function toggleFaq(el) {
+    const item = el.closest(".faq-item");
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(i => i.classList.remove("open"));
+    if (!isOpen) item.classList.add("open");
+  }
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function submitHero() {
+    const input = document.getElementById("heroEmail");
+    if (!isEmail(input.value.trim())) { input.style.borderColor = "#e05a4a"; input.focus(); return; }
+    document.getElementById("heroFormRow").style.display = "none";
+    document.getElementById("heroSuccess").classList.add("show");
+  }
+  function submitWaitlist() {
+    const input = document.getElementById("waitlistEmail");
+    if (!isEmail(input.value.trim())) { input.style.borderColor = "rgba(232,162,69,0.7)"; input.focus(); return; }
+    document.getElementById("waitlistFormRow").style.display = "none";
+    document.getElementById("waitlistSuccess").classList.add("show");
+  }
+  document.getElementById("heroEmail").addEventListener("keydown", e => { if (e.key === "Enter") submitHero(); });
+  document.getElementById("waitlistEmail").addEventListener("keydown", e => { if (e.key === "Enter") submitWaitlist(); });
+  const scrollBtn = document.getElementById("scrollTop");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("visible", window.scrollY > 400);
+  });
+  const reveals = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
