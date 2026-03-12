@@ -1,0 +1,59 @@
+# Wildvue
+
+> Wildvue is an AI-powered mobile app that removes fences, cage bars, aquarium glass, wire mesh, and other barriers from wildlife photos in one tap. No editing skills required.
+
+Wildvue is built for anyone who has ever taken a photo at a zoo, aquarium, safari, or wildlife park and had the shot ruined by a barrier between them and the animal. The app analyzes the image, identifies the barrier, and reconstructs the background using AI trained specifically on wildlife photography. The result looks natural because the model understands fur texture, feathers, motion blur, and animal anatomy.
+
+Wildvue is currently in pre-launch. Users can join the waitlist at wildvue.com to get early access when the iOS and Android apps go live.
+
+## Key pages
+
+- Homepage / consumer product: https://wildvue.com/
+- Wildvue for Venues (B2B white-label): https://wildvue.com/venues/
+
+## Consumer product
+
+- Category: Mobile app (iOS and Android)
+- Status: Pre-launch, waitlist open
+- Pricing: Free tier with monthly credits; Pro plan with unlimited enhancements
+- What it removes: Zoo fences, cage bars, wire mesh, aquarium glass, safari vehicle windows, murky water reflections, floating debris
+- How it works: Upload a photo, tap once, download the barrier-free result
+- Privacy: Photos are processed and deleted from servers within 24 hours. User photos are never used for training without explicit opt-in.
+
+## Wildvue for Venues (B2B)
+
+Wildvue offers a fully white-labeled version of the app for zoos, aquariums, wildlife parks, and safari operators. The venue gets their own branded app (their logo, colors, and name) powered by Wildvue's AI under the hood.
+
+- Target customers: Zoos, aquariums, wildlife parks, safari operators, nature reserves
+- What venues get: A fully branded mobile app, App Store listing, ongoing AI updates, and no technical work required
+- Pricing: Custom, based on venue size and visitor volume
+- Contact: hello@wildvue.com
+
+## Brand
+
+- Name: Wildvue
+- Tagline: Wildlife photography the way you saw it.
+- Mission: Help people capture and keep the wildlife moments they actually saw, without barriers ruining the memory.
+- Founded: 2026
+- Contact: hello@wildvue.com
+- Website: https://wildvue.com
+
+## Frequently asked questions
+
+**What types of barriers can Wildvue remove?**
+Fences, cage bars, wire mesh, aquarium glass, safari vehicle windows, murky water reflections, and floating debris. The model is continually improving.
+
+**Will the animal still look natural after processing?**
+Yes. Wildvue is built specifically for wildlife photos, so it understands fur texture, feathers, and motion blur. In most cases you cannot tell anything was ever in the way.
+
+**Is Wildvue free?**
+There is a free option with a set of credits each month. A Pro plan provides unlimited enhancements.
+
+**Is my original photo kept private?**
+Yes. Photos are processed and deleted from Wildvue servers within 24 hours. Photos are never used for model training without explicit user opt-in.
+
+**Does it work for aquarium photos?**
+Yes, including glass, murky water, and floating debris.
+
+**When does the app launch?**
+The app is targeting iOS and Android launch in the coming months. Waitlist members get early access.

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildvue for Venues — White-label wildlife photo AI for zoos, aquariums &amp; parks</title>
+<meta name="description" content="Give your guests a fully branded wildlife photo app with your name on it. Wildvue removes fences and barriers in one tap. White-label B2B solutions for zoos, aquariums, and wildlife parks.">
+<meta name="keywords" content="wildlife venue app, zoo white label app, aquarium photo app, wildlife park visitor app, B2B wildlife photo AI, branded zoo app">
+<link rel="canonical" href="https://wildvue.com/venues/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#4A7C59">
+<meta name="msapplication-TileColor" content="#4A7C59">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wildvue.com/venues/">
+<meta property="og:title" content="Wildvue for Venues — White-label wildlife photo AI">
+<meta property="og:description" content="Give your guests a fully branded wildlife photo app with your name on it. Wildvue removes fences and barriers in one tap. White-label B2B solutions for zoos, aquariums, and wildlife parks.">
+<meta property="og:image" content="https://wildvue.com/amur_leopard_after.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wildlife photo with barrier removed by Wildvue">
+<meta property="og:site_name" content="Wildvue">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wildvue">
+<meta name="twitter:title" content="Wildvue for Venues — White-label wildlife photo AI">
+<meta name="twitter:description" content="Give your guests a fully branded wildlife photo app with your name on it. White-label B2B solutions for zoos, aquariums, and wildlife parks.">
+<meta name="twitter:image" content="https://wildvue.com/amur_leopard_after.webp">
+<meta name="twitter:image:alt" content="Wildlife photo with barrier removed by Wildvue">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wildvue.com/#organization",
+      "name": "Wildvue",
+      "url": "https://wildvue.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://wildvue.com/wildvue_logo.webp"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@wildvue.com",
+        "contactType": "sales"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://wildvue.com/venues/#webpage",
+      "url": "https://wildvue.com/venues/",
+      "name": "Wildvue for Venues — White-label wildlife photo AI for zoos, aquariums and parks",
+      "description": "Give your guests a fully branded wildlife photo app with your name on it. Wildvue removes fences and barriers in one tap.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "url": "https://wildvue.com",
+        "name": "Wildvue"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Wildvue for Venues",
+      "description": "A fully white-labeled wildlife photo barrier-removal app for zoos, aquariums, wildlife parks, and safari operators. Wildvue's AI is rebranded under the venue's own name, logo, and colors. The venue gets a polished App Store app with no technical work required.",
+      "provider": { "@id": "https://wildvue.com/#organization" },
+      "areaServed": "Worldwide",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Zoos, aquariums, wildlife parks, safari operators, nature reserves"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Custom pricing based on venue size and visitor volume.",
+        "url": "https://wildvue.com/venues/#contact"
+      },
+      "serviceType": "White-label mobile app",
+      "featureList": [
+        "Fully white-labeled app with venue branding",
+        "AI barrier removal — fences, glass, cage bars",
+        "App Store and Google Play listing handled by Wildvue",
+        "No technical work required from the venue",
+        "Custom pricing per venue"
+      ]
+    }
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #4A7C59; --sage-dark: #2E5E3A; --amber-light: #E8D5A3;
+    --cream: #FAF5E8; --cream-mid: #F0EAD6; --text-dark: #1A2E1E;
+    --text-mid: #4A5C4D; --text-light: #8A9B8D; --white: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Plus Jakarta Sans", sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(46,94,58,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(250,245,232,0.08); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { width: 38px; height: 38px; border-radius: 10px; display: block; }
+  .nav-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--cream); }
+  .nav-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: rgba(250,245,232,0.7); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta { background: var(--cream) !important; color: var(--text-dark) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; }
+
+  /* HAMBURGER */
+  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; }
+  .nav-hamburger span { display: block; height: 2px; background: var(--cream); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* MOBILE MENU */
+  .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 99; flex-direction: column; padding: 32px 28px 48px; overflow-y: auto; transform: translateY(-12px); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; }
+  .mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; }
+  .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 4px; margin-bottom: 40px; }
+  .mobile-menu-links li a { display: block; font-family: "Fraunces", serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-dark); text-decoration: none; padding: 10px 0; border-bottom: 1px solid rgba(58,125,68,0.08); transition: color 0.2s; }
+  .mobile-menu-links li:last-child a { color: var(--sage); border-bottom: none; }
+  .mobile-menu-links li a:hover { color: var(--sage); }
+
+  /* HERO */
+  .hero { min-height: 100vh; padding: 130px 48px 100px; display: flex; align-items: center; justify-content: center; background: linear-gradient(to bottom, #2E5E3A, #3D7049, #4A7C59); text-align: center; }
+  .hero-inner { max-width: 720px; width: 100%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(250,245,232,0.12); border: 1px solid rgba(250,245,232,0.25); border-radius: 100px; padding: 6px 14px 6px 10px; font-size: 12px; font-weight: 600; color: var(--cream); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.5s ease both; }
+  .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber-light); animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.3);} }
+  .hero-h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(40px,5.5vw,68px); line-height: 1.05; letter-spacing: -0.03em; color: var(--cream); margin-bottom: 24px; animation: fadeUp 0.5s ease 0.1s both; }
+  .hero-h1 em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .hero-sub { font-size: 17px; line-height: 1.7; color: rgba(250,245,232,0.7); margin-bottom: 40px; max-width: 580px; margin-left: auto; margin-right: auto; animation: fadeUp 0.5s ease 0.2s both; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.5s ease 0.3s both; }
+  .btn-cream { display: inline-block; padding: 15px 30px; background: var(--cream); color: var(--text-dark); border: none; border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+  .btn-cream:hover { background: var(--amber-light); transform: translateY(-2px); }
+  .btn-ghost { display: inline-block; padding: 15px 30px; background: transparent; color: var(--cream); border: 1.5px solid rgba(250,245,232,0.4); border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; transition: border-color 0.2s, background 0.2s, transform 0.15s; white-space: nowrap; }
+  .btn-ghost:hover { border-color: rgba(250,245,232,0.8); background: rgba(250,245,232,0.08); transform: translateY(-2px); }
+
+  /* SHARED SECTION STYLES */
+  .section-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 14px; display: block; }
+  .section-tag-light { color: var(--amber-light); }
+  .section-h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(32px,3.5vw,48px); letter-spacing: -0.02em; line-height: 1.1; color: var(--text-dark); margin-bottom: 14px; }
+  .section-h2 em { font-style: italic; font-weight: 400; color: var(--sage); }
+  .section-h2-light { color: var(--cream); }
+  .section-h2-light em { color: var(--amber-light); }
+  .section-sub { font-size: 15px; line-height: 1.65; color: var(--text-mid); max-width: 560px; margin-bottom: 52px; }
+  .section-sub-light { color: rgba(250,245,232,0.7); }
+
+  /* WHAT WE OFFER */
+  .offer-section { background: var(--cream); padding: 100px 64px; }
+  .offer-inner { max-width: 1160px; margin: 0 auto; }
+  .offer-header { margin-bottom: 52px; }
+  .offer-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .offer-card { background: var(--white); border-radius: 20px; padding: 36px 32px; border: 1px solid rgba(74,124,89,0.09); transition: transform 0.2s, box-shadow 0.2s; }
+  .offer-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,58,34,0.1); }
+  .offer-card-icon { font-size: 28px; margin-bottom: 16px; }
+  .offer-card-h3 { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 10px; }
+  .offer-card-p { font-size: 14px; line-height: 1.68; color: var(--text-mid); }
+
+  /* WHY GUESTS LOVE IT */
+  .guests-section { background: var(--sage); padding: 100px 64px; }
+  .guests-inner { max-width: 1160px; margin: 0 auto; }
+  .guests-header { margin-bottom: 52px; }
+  .guests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .guests-card { background: rgba(250,245,232,0.12); border: 1px solid rgba(250,245,232,0.15); border-radius: 20px; padding: 32px 30px; transition: transform 0.2s, box-shadow 0.2s; }
+  .guests-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(20,50,28,0.25); }
+  .guests-card-icon { font-size: 26px; margin-bottom: 14px; }
+  .guests-card-h3 { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--cream); margin-bottom: 8px; }
+  .guests-card-p { font-size: 14px; line-height: 1.68; color: rgba(250,245,232,0.7); }
+
+  /* CONTACT */
+  .contact-section { background: var(--cream-mid); padding: 100px 64px; }
+  .contact-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .contact-left { padding-top: 8px; }
+  .contact-h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(30px,3vw,44px); letter-spacing: -0.02em; line-height: 1.1; color: var(--text-dark); margin-bottom: 16px; }
+  .contact-h2 em { font-style: italic; font-weight: 400; color: var(--sage); }
+  .contact-sub { font-size: 15px; line-height: 1.65; color: var(--text-mid); margin-bottom: 44px; }
+  .trust-items { display: flex; flex-direction: column; gap: 28px; }
+  .trust-item { display: flex; gap: 16px; align-items: flex-start; }
+  .trust-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+  .trust-item-text h4 { font-family: "Fraunces", serif; font-weight: 600; font-size: 16px; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 4px; }
+  .trust-item-text p { font-size: 13px; line-height: 1.6; color: var(--text-mid); }
+  .trust-item-text a { color: var(--sage); text-decoration: none; }
+  .trust-item-text a:hover { text-decoration: underline; }
+  .contact-form-card { background: var(--white); border-radius: 24px; padding: 40px; box-shadow: 0 8px 40px rgba(28,58,34,0.09), 0 2px 8px rgba(28,58,34,0.04); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+  .form-group label { font-size: 13px; font-weight: 600; color: var(--text-dark); letter-spacing: 0.01em; }
+  .form-control { padding: 13px 18px; border: 1.5px solid rgba(74,92,77,0.18); border-radius: 12px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 14px; color: var(--text-dark); background: var(--cream); outline: none; transition: border-color 0.2s, box-shadow 0.2s; resize: none; }
+  .form-control::placeholder { color: var(--text-light); }
+  .form-control:focus { border-color: var(--sage); box-shadow: 0 0 0 3px rgba(74,124,89,0.1); }
+  .form-control.error { border-color: #d94f3d; }
+  textarea.form-control { min-height: 130px; }
+  .btn-submit { width: 100%; padding: 16px 28px; background: var(--sage); color: var(--cream); border: none; border-radius: 100px; font-family: "Plus Jakarta Sans", sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 4px; }
+  .btn-submit:hover { background: var(--sage-dark); transform: translateY(-1px); }
+  .form-success { display: none; text-align: center; padding: 32px 20px; }
+  .form-success.show { display: block; }
+  .form-success-emoji { font-size: 52px; display: block; margin-bottom: 16px; }
+  .form-success-h3 { font-family: "Fraunces", serif; font-weight: 700; font-size: 26px; letter-spacing: -0.02em; color: var(--text-dark); margin-bottom: 10px; }
+  .form-success-p { font-size: 14px; line-height: 1.65; color: var(--text-mid); }
+
+  /* FOOTER */
+  footer { background: var(--sage); padding: 64px 64px 40px; }
+  .footer-inner { max-width: 1160px; margin: 0 auto; }
+  .footer-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-brand { max-width: 280px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .footer-logo img { width: 34px; height: 34px; border-radius: 9px; display: block; }
+  .footer-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--white); }
+  .footer-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .footer-tagline { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.35); }
+  .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+  /* SCROLL TO TOP */
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 99; width: 44px; height: 44px; border-radius: 50%; background: var(--sage-dark); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(28,58,34,0.25); opacity: 0; transform: translateY(12px); transition: opacity 0.25s, transform 0.25s, background 0.2s; pointer-events: none; }
+  .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .scroll-top:hover { background: var(--sage); }
+  .scroll-top svg { width: 18px; height: 18px; stroke: var(--white); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .rd1 { transition-delay: 0.1s; } .rd2 { transition-delay: 0.2s; } .rd3 { transition-delay: 0.3s; }
+
+  /* MOBILE MENU APPS */
+  .mobile-menu-apps { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+  .mobile-menu-apps-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 4px; }
+  .app-btn-dark { display: flex; align-items: center; gap: 9px; padding: 10px 18px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); color: var(--white); border-radius: 10px; text-decoration: none; pointer-events: none; }
+  .app-btn-dark svg { width: 18px; height: 18px; fill: var(--white); flex-shrink: 0; }
+  .app-btn-dark-text { line-height: 1.2; }
+  .app-btn-dark-text span { display: block; font-size: 9px; opacity: 0.6; letter-spacing: 0.06em; text-transform: uppercase; }
+  .app-btn-dark-text strong { display: block; font-size: 13px; font-weight: 600; }
+  .mobile-app-btn { opacity: 0.5; pointer-events: none; background: rgba(28,43,30,0.07) !important; border: 1px solid rgba(28,43,30,0.12) !important; color: var(--text-dark) !important; border-radius: 12px !important; padding: 12px 16px !important; justify-content: flex-start !important; }
+  .mobile-app-btn svg { fill: var(--text-dark) !important; }
+  .mobile-app-btn .app-btn-dark-text span { color: var(--text-mid) !important; opacity: 1 !important; }
+  .mobile-app-btn .app-btn-dark-text strong { color: var(--text-dark) !important; }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+    .nav-links { display: none; }
+    body.menu-open { overflow: hidden; }
+    nav { padding: 14px 20px; }
+  }
+
+  @media (max-width: 900px) {
+    /* HERO */
+    .hero { padding: 100px 24px 60px; }
+    .hero-h1 { font-size: 38px; }
+    .hero-sub { font-size: 15px; }
+
+    /* OFFER */
+    .offer-section { padding: 60px 20px; }
+    .offer-cards { grid-template-columns: 1fr; gap: 16px; }
+
+    /* GUESTS */
+    .guests-section { padding: 60px 20px; }
+    .guests-grid { grid-template-columns: 1fr; gap: 16px; }
+
+    /* CONTACT */
+    .contact-section { padding: 60px 20px; }
+    .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* FOOTER */
+    footer { padding: 48px 20px 32px; }
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-legal { justify-content: center; flex-wrap: wrap; gap: 16px; }
+
+    /* SCROLL TO TOP */
+    .scroll-top { bottom: 20px; right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="../wildvue_logo.webp" alt="Wildvue">
+    <span class="nav-wordmark">Wild<em>vue</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#how-it-works">How it works</a></li>
+    <li><a href="/#examples">Examples</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="./">Wildvue for Venues</a></li>
+    <li><a href="/#waitlist" class="nav-cta">Join waitlist</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="/#how-it-works" onclick="closeMenu()">How it works</a></li>
+    <li><a href="/#examples" onclick="closeMenu()">Examples</a></li>
+    <li><a href="/#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="./" onclick="closeMenu()">Wildvue for Venues</a></li>
+    <li><a href="/#waitlist" onclick="closeMenu()">Join waitlist</a></li>
+  </ul>
+  <div class="mobile-menu-apps">
+    <p class="mobile-menu-apps-label">Available at launch</p>
+    <a href="#" class="app-btn-dark mobile-app-btn">
+      <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.14-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04l-.06.17zm-5.3-15.06c.66-.81 1.74-1.44 2.64-1.44.12 1.03-.29 2.06-.93 2.8-.63.74-1.65 1.32-2.66 1.24-.13-1 .37-2.03.95-2.6z"/></svg>
+      <div class="app-btn-dark-text"><span>Download on the</span><strong>App Store</strong></div>
+    </a>
+    <a href="#" class="app-btn-dark mobile-app-btn">
+      <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-1.367c.57.33.926.924.926 1.66 0 .736-.355 1.33-.926 1.66l-1.952 1.129-2.521-2.521 2.521-2.52 1.952 1.128zM5.864 2.658L16.8 9.01l-2.302 2.302-8.635-8.654z"/></svg>
+      <div class="app-btn-dark-text"><span>Get it on</span><strong>Google Play</strong></div>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="badge-dot"></div>Wildvue for Venues</div>
+    <h1 class="hero-h1">Your brand. Our tech.<br><em>Happier guests.</em></h1>
+    <p class="hero-sub">Wildvue removes fences, cage bars, and glass from wildlife photos in one tap. We can put that same experience inside a fully branded app for your venue, with your name on it.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-cream">Get in touch</a>
+      <a href="#why" class="btn-ghost">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE OFFER -->
+<section class="offer-section" id="why">
+  <div class="offer-inner">
+    <div class="offer-header">
+      <span class="section-tag reveal">What we offer</span>
+      <h2 class="section-h2 reveal">A premium photo experience,<br><em>ready to go.</em></h2>
+      <p class="section-sub reveal">We rebuild Wildvue under your brand so your visitors get a polished, on-brand app without you having to build a thing.</p>
+    </div>
+    <div class="offer-cards">
+      <div class="offer-card reveal rd1">
+        <div class="offer-card-icon">🏷️</div>
+        <h3 class="offer-card-h3">Fully white-labeled</h3>
+        <p class="offer-card-p">Your logo, your colors, your app name. Every screen reflects your venue. Visitors will never know Wildvue is powering it.</p>
+      </div>
+      <div class="offer-card reveal rd2">
+        <div class="offer-card-icon">⚡</div>
+        <h3 class="offer-card-h3">Nothing to build or maintain</h3>
+        <p class="offer-card-p">We handle the app, the AI, the App Store listing, and all the updates. You just share it with your visitors and let it do its thing.</p>
+      </div>
+      <div class="offer-card reveal rd3">
+        <div class="offer-card-icon">📐</div>
+        <h3 class="offer-card-h3">Scoped to your venue</h3>
+        <p class="offer-card-p">Pricing is custom based on your size and visitor volume. Whether you run one location or many, we can put together something that fits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY GUESTS LOVE IT -->
+<section class="guests-section">
+  <div class="guests-inner">
+    <div class="guests-header">
+      <span class="section-tag section-tag-light reveal">Why guests love it</span>
+      <h2 class="section-h2 section-h2-light reveal">The photo they wanted<br><em>all along.</em></h2>
+      <p class="section-sub section-sub-light reveal">Guests spend hours finding the perfect shot, only to have a fence or cage bar ruin it. Wildvue fixes that in seconds, and they remember your venue for it.</p>
+    </div>
+    <div class="guests-grid">
+      <div class="guests-card reveal rd1">
+        <div class="guests-card-icon">📸</div>
+        <h3 class="guests-card-h3">One tap, barrier gone</h3>
+        <p class="guests-card-p">No editing skills needed. Guests upload their photo, tap once, and get a clean wildlife shot back in seconds. It just works.</p>
+      </div>
+      <div class="guests-card reveal rd2">
+        <div class="guests-card-icon">🌿</div>
+        <h3 class="guests-card-h3">Photos worth sharing</h3>
+        <p class="guests-card-p">Barrier-free photos are the ones guests actually post. Every share puts your venue's branded app in front of a new audience for free.</p>
+      </div>
+      <div class="guests-card reveal rd1">
+        <div class="guests-card-icon">🦁</div>
+        <h3 class="guests-card-h3">Something to remember</h3>
+        <p class="guests-card-p">The photo experience becomes part of the visit. Guests leave with images they are proud of, and they associate that feeling with you.</p>
+      </div>
+      <div class="guests-card reveal rd2">
+        <div class="guests-card-icon">👨‍👩‍👧</div>
+        <h3 class="guests-card-h3">Works for everyone</h3>
+        <p class="guests-card-p">Families, school trips, solo visitors. If they took a photo at your venue, Wildvue can make it better. No photography experience required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <span class="section-tag reveal">Get in touch</span>
+      <h2 class="contact-h2 reveal">Let's talk about<br><em>your venue.</em></h2>
+      <p class="contact-sub reveal">Drop us a note and we will get back to you within one business day. No pressure, just a conversation.</p>
+      <div class="trust-items reveal">
+        <div class="trust-item">
+          <span class="trust-icon">💬</span>
+          <div class="trust-item-text">
+            <h4>We respond fast</h4>
+            <p>Usually within one business day. We keep it simple and human.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">🔒</span>
+          <div class="trust-item-text">
+            <h4>No commitment required</h4>
+            <p>Getting in touch is just a conversation. No contracts until you are ready.</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">✉️</span>
+          <div class="trust-item-text">
+            <h4>Or just email us directly</h4>
+            <p>Reach us anytime at <a href="mailto:hello@wildvue.com">hello@wildvue.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-right reveal rd1">
+      <div class="contact-form-card">
+        <div id="contactFormWrap">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="Jane Smith" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="contactVenue">Venue name</label>
+              <input type="text" id="contactVenue" class="form-control" placeholder="Greenfield Zoo" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" class="form-control" placeholder="jane@greenfieldzoo.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" class="form-control" placeholder="Tell us a bit about your venue and what you are looking for..."></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitContact()">Send message 🌿</button>
+        </div>
+        <div class="form-success" id="contactSuccess">
+          <span class="form-success-emoji">🦁</span>
+          <h3 class="form-success-h3">Got it, thanks!</h3>
+          <p class="form-success-p">We will be in touch within one business day. Looking forward to the conversation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../wildvue_logo.webp" alt="Wildvue">
+          <span class="footer-wordmark">Wild<em>vue</em></span>
+        </div>
+        <p class="footer-tagline">Wildlife photography the way you saw it. No fences, no glare, no distractions. Just the wild.</p>
+      </div>
+      <div class="footer-col"><h4>Venues</h4><ul><li><a href="./">Wildvue for Venues</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="/#examples">Examples</a></li><li><a href="/#how-it-works">How it works</a></li><li><a href="/#waitlist">Join waitlist</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Press kit</a></li></ul></div>
+      <div class="footer-col"><h4>Follow us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">X / Twitter</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Wildvue. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll to top
+  window.addEventListener("scroll", () => {
+    document.getElementById("scrollTop").classList.toggle("visible", window.scrollY > 400);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const btn = document.getElementById("navHamburger");
+    const isOpen = menu.classList.contains("open");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      menu.classList.add("open");
+      btn.classList.add("open");
+      document.body.classList.add("menu-open");
+    }
+  }
+  function closeMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const btn = document.getElementById("navHamburger");
+    menu.classList.remove("open");
+    btn.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  }
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  // Contact form
+  function submitContact() {
+    const name = document.getElementById("contactName");
+    const venue = document.getElementById("contactVenue");
+    const email = document.getElementById("contactEmail");
+    const message = document.getElementById("contactMessage");
+
+    [name, venue, email, message].forEach(el => el.classList.remove("error"));
+
+    if (!name.value.trim()) { name.classList.add("error"); name.focus(); return; }
+    if (!venue.value.trim()) { venue.classList.add("error"); venue.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add("error"); email.focus(); return; }
+    if (!message.value.trim()) { message.classList.add("error"); message.focus(); return; }
+
+    document.getElementById("contactFormWrap").style.display = "none";
+    document.getElementById("contactSuccess").classList.add("show");
+  }
+</script>
+</body>
+</html>

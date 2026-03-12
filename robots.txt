@@ -1,0 +1,57 @@
+# robots.txt — wildvue.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — explicitly allowed for GEO and AI search indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap
+Sitemap: https://wildvue.com/sitemap.xml
+
+# llms.txt — AI-readable site overview
+# https://wildvue.com/llms.txt

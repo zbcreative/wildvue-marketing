@@ -1,0 +1,17 @@
+{
+  "name": "Wildvue",
+  "short_name": "Wildvue",
+  "description": "Wildlife photography the way you saw it. Remove fences, cage bars, and aquarium glass from your photos in one tap.",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#4A7C59",
+  "background_color": "#FAF5E8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
