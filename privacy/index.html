@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Wildvue</title>
+<meta name="description" content="Wildvue Privacy Policy. How we collect, use, and protect your data when you use our website and mobile apps. Your photos are stored securely and privately.">
+<link rel="canonical" href="https://wildvue.com/privacy/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#4A7C59">
+<meta name="msapplication-TileColor" content="#4A7C59">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #4A7C59; --sage: #4A7C59; --sage-dark: #2E5E3A;
+    --amber-light: #E8D5A3; --cream: #FAF5E8; --cream-mid: #F0EAD6;
+    --text-dark: #1A2E1E; --text-mid: #4A5C4D; --text-light: #8A9B8D; --white: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Plus Jakarta Sans", sans-serif; color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(46,94,58,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(250,245,232,0.08); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { width: 38px; height: 38px; border-radius: 10px; display: block; }
+  .nav-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: var(--cream); }
+  .nav-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: rgba(250,245,232,0.7); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cream); }
+  .nav-cta { background: var(--cream) !important; color: var(--text-dark) !important; padding: 10px 22px; border-radius: 100px; font-weight: 700 !important; }
+
+  .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 36px; height: 36px; background: none; border: none; cursor: pointer; padding: 4px; border-radius: 8px; }
+  .nav-hamburger span { display: block; height: 2px; background: var(--cream); border-radius: 2px; transition: transform 0.25s ease, opacity 0.2s ease; transform-origin: center; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu { display: none; position: fixed; top: 65px; left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 99; flex-direction: column; padding: 32px 28px 48px; overflow-y: auto; transform: translateY(-12px); opacity: 0; transition: transform 0.25s ease, opacity 0.25s ease; }
+  .mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; }
+  .mobile-menu-links { list-style: none; display: flex; flex-direction: column; gap: 4px; margin-bottom: 40px; }
+  .mobile-menu-links li a { display: block; font-family: "Fraunces", serif; font-size: 28px; font-weight: 600; letter-spacing: -0.02em; color: var(--text-dark); text-decoration: none; padding: 10px 0; border-bottom: 1px solid rgba(58,125,68,0.08); transition: color 0.2s; }
+  .mobile-menu-links li:last-child a { color: var(--sage); border-bottom: none; }
+  .mobile-menu-links li a:hover { color: var(--sage); }
+
+  /* PAGE CONTENT */
+  .page-main { padding: 120px 48px 80px; min-height: 60vh; }
+  .page-inner { max-width: 720px; margin: 0 auto; }
+  .page-h1 { font-family: "Fraunces", serif; font-weight: 700; font-size: clamp(32px,4vw,44px); letter-spacing: -0.02em; color: var(--text-dark); margin-bottom: 8px; }
+  .page-updated { font-size: 14px; color: var(--text-mid); margin-bottom: 40px; }
+  .policy-section { margin-bottom: 32px; }
+  .policy-section h2 { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 12px; margin-top: 28px; }
+  .policy-section h2:first-of-type { margin-top: 0; }
+  .policy-section h3 { font-size: 16px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; margin-top: 20px; }
+  .policy-section p, .policy-section li { font-size: 15px; line-height: 1.7; color: var(--text-mid); margin-bottom: 12px; }
+  .policy-section ul { margin: 12px 0 12px 20px; padding-left: 0; list-style: disc; }
+  .policy-section a { color: var(--green-deep); text-decoration: none; }
+  .policy-section a:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer { background: var(--green-deep); padding: 64px 48px 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .footer-brand { max-width: 280px; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .footer-logo img { width: 34px; height: 34px; border-radius: 9px; display: block; }
+  .footer-wordmark { font-family: "Fraunces", serif; font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--white); }
+  .footer-wordmark em { font-style: italic; font-weight: 400; color: var(--amber-light); }
+  .footer-tagline { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.35); }
+  .footer-col h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.22); }
+  .footer-legal { display: flex; gap: 24px; }
+  .footer-legal a { font-size: 12px; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.5); }
+
+  .scroll-top { position: fixed; bottom: 32px; right: 32px; z-index: 99; width: 44px; height: 44px; border-radius: 50%; background: var(--sage-dark); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(28,58,34,0.25); opacity: 0; transform: translateY(12px); transition: opacity 0.25s, transform 0.25s, background 0.2s; pointer-events: none; }
+  .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .scroll-top:hover { background: var(--sage); }
+  .scroll-top svg { width: 18px; height: 18px; stroke: var(--white); }
+
+  @media (max-width: 768px) {
+    .nav-hamburger { display: flex; }
+    .nav-links { display: none; }
+    body.menu-open { overflow: hidden; }
+    nav { padding: 14px 20px; }
+    .page-main { padding: 100px 20px 60px; }
+    footer { padding: 48px 20px 32px; }
+    .footer-top { flex-direction: column; gap: 36px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-legal { justify-content: center; flex-wrap: wrap; gap: 16px; }
+    .scroll-top { bottom: 20px; right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="/wildvue_logo.webp" alt="Wildvue">
+    <span class="nav-wordmark">Wild<em>vue</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#how-it-works">How it works</a></li>
+    <li><a href="/#examples">Examples</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/venues/">Wildvue for Venues</a></li>
+    <li><a href="/#waitlist" class="nav-cta">Join waitlist</a></li>
+  </ul>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMenu()" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-menu-links">
+    <li><a href="/#how-it-works" onclick="closeMenu()">How it works</a></li>
+    <li><a href="/#examples" onclick="closeMenu()">Examples</a></li>
+    <li><a href="/#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="/venues/" onclick="closeMenu()">Wildvue for Venues</a></li>
+    <li><a href="/#waitlist" onclick="closeMenu()">Join waitlist</a></li>
+  </ul>
+</div>
+
+<main class="page-main">
+  <div class="page-inner">
+    <h1 class="page-h1">Privacy Policy</h1>
+    <p class="page-updated">Last updated: March 16, 2026</p>
+
+    <div class="policy-section">
+      <h2>1. Introduction</h2>
+      <p>Wildvue (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) operates the Wildvue website at wildvue.com and the Wildvue mobile applications for iOS and Android. This Privacy Policy describes how we collect, use, and protect your personal data when you use our website and apps. By using our services, you agree to the practices described here.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>2. Data we collect</h2>
+      <p>We may collect:</p>
+      <ul>
+        <li><strong>Account and contact information:</strong> Such as your email address when you join our waitlist or create an account.</li>
+        <li><strong>Photos:</strong> Images you upload to the app for barrier removal (e.g., fences, cage bars, aquarium glass). This data is used only to provide the service. Your photos are stored securely and privately. We do not use your photo content to train our models without your explicit opt-in.</li>
+        <li><strong>Device and identifiers:</strong> Device type, operating system, and similar technical data necessary for app functionality.</li>
+        <li><strong>Usage data:</strong> We may collect analytics (e.g., how the app is used) to improve our service. Where we do so, we will describe it in the app or in updates to this policy.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. How we use your data</h2>
+      <p>We use your data to:</p>
+      <ul>
+        <li>Provide the Wildvue service (barrier removal and related features).</li>
+        <li>Improve our app and AI models (with your explicit opt-in where your photos are involved).</li>
+        <li>Respond to support requests and communicate with you.</li>
+        <li>Send marketing or product updates where you have agreed.</li>
+        <li>Comply with legal obligations and enforce our terms.</li>
+      </ul>
+      <p>Your photos are stored securely and privately. We do not use your photos for training our AI without your explicit consent.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Legal basis (GDPR)</h2>
+      <p>If you are in the European Economic Area (EEA) or UK, we process your personal data based on: (a) your consent where we ask for it (e.g., marketing, optional use of photos for training); (b) performance of our contract with you (e.g., providing the app and barrier removal); and (c) our legitimate interests (e.g., security, improving our service) where they are not overridden by your rights.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Data sharing and disclosure</h2>
+      <p>We do not sell your personal information. We may share data with:</p>
+      <ul>
+        <li><strong>Service providers:</strong> Such as hosting and cloud or AI-processing providers that help us operate the service, under strict confidentiality and data-processing terms.</li>
+        <li><strong>Legal requirements:</strong> When required by law, court order, or to protect our rights, safety, or property.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Community features and user-generated content</h2>
+      <p>Wildvue includes an optional community Explore feed where you may choose to share your edited photos publicly. If you choose to post a photo to the Explore feed:</p>
+      <ul>
+        <li>Your first name and cleaned photo will be visible to other Wildvue users</li>
+        <li>Any venue name you optionally provide will be displayed alongside your post</li>
+        <li>Other users may like your post</li>
+        <li>Your post will remain visible until you delete it or delete your account</li>
+      </ul>
+      <p>Posting to the Explore feed is entirely optional and requires your explicit action. We never automatically post your photos publicly. You may delete your posts at any time from within the app.</p>
+      <p>We do not moderate the Explore feed proactively but reserve the right to remove content that violates our terms of service.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>7. Data retention</h2>
+      <p>Your photos are stored securely and privately. We retain them only as long as needed to provide the service and as described in the app or at the time of collection. Other data (e.g., account information, logs) is retained as needed for the purposes above or as required by law.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>8. Security</h2>
+      <p>We use technical and organizational measures (such as encryption and access controls) to protect your data. No method of transmission or storage is 100% secure; we cannot guarantee absolute security but we work to protect your information.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>9. International transfers</h2>
+      <p>Your data may be processed in countries outside your residence, including outside the EEA. Where we transfer data from the EEA or UK, we use appropriate safeguards (such as adequacy decisions or standard contractual clauses) as required by law.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>10. Your rights</h2>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li><strong>Access</strong> and receive a copy of your personal data.</li>
+        <li><strong>Rectification</strong> of inaccurate data.</li>
+        <li><strong>Erasure</strong> (&quot;right to be forgotten&quot;) in certain cases.</li>
+        <li><strong>Data portability</strong> (receive your data in a structured, machine-readable format).</li>
+        <li><strong>Object</strong> to or restrict certain processing.</li>
+        <li><strong>Withdraw consent</strong> where processing is based on consent.</li>
+        <li><strong>Lodge a complaint</strong> with a supervisory authority (e.g., in your country).</li>
+      </ul>
+      <p>California residents also have the right to know, delete, and correct personal information, and to opt out of the &quot;sale&quot; or &quot;sharing&quot; of personal information (we do not sell personal information—see Section 11). We will not discriminate against you for exercising your rights.</p>
+      <p>To exercise any of these rights, contact us at <a href="mailto:hello@wildvue.com">hello@wildvue.com</a> (or &quot;Privacy at Wildvue&quot;). We will respond within the time required by applicable law.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>11. California / CCPA</h2>
+      <p>We do not sell personal information as defined under the California Consumer Privacy Act (CCPA). We do not share personal information for cross-context behavioral advertising in a way that qualifies as a &quot;sale&quot; or &quot;share&quot; under the CCPA. You have the right to know what personal information we collect and how it is used, the right to delete your personal information, the right to correct inaccurate information, and the right to opt out of sale or sharing. To submit a request, email us at <a href="mailto:hello@wildvue.com">hello@wildvue.com</a>. We will not discriminate against you for exercising these rights.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>12. Children&apos;s privacy</h2>
+      <p>Our services are not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected a child&apos;s data, please contact us at <a href="mailto:hello@wildvue.com">hello@wildvue.com</a> and we will take steps to delete it.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>13. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. The &quot;Last updated&quot; date at the top of this page will reflect the latest version. We may notify you of material changes by email or through the app. Your continued use of our services after changes constitutes acceptance of the updated policy. We encourage you to review this page periodically.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>14. Contact</h2>
+      <p>For privacy-related questions or to exercise your rights, contact us:</p>
+      <p>
+        Wildvue<br>
+        O&apos;Fallon, MO 63368<br>
+        United States<br>
+        Email: <a href="mailto:hello@wildvue.com">hello@wildvue.com</a>
+      </p>
+    </div>
+  </div>
+</main>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/wildvue_logo.webp" alt="Wildvue">
+          <span class="footer-wordmark">Wild<em>vue</em></span>
+        </div>
+        <p class="footer-tagline">Wildlife photography the way you saw it. No fences, no glare, no distractions. Just the wild.</p>
+      </div>
+      <div class="footer-col"><h4>Venues</h4><ul><li><a href="/venues/">Wildvue for Venues</a></li></ul></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="/#examples">Examples</a></li><li><a href="/#how-it-works">How it works</a></li><li><a href="/#waitlist">Join waitlist</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Press kit</a></li></ul></div>
+      <div class="footer-col"><h4>Follow us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">X / Twitter</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Wildvue. All rights reserved.</span>
+      <div class="footer-legal"><a href="/privacy/">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener("scroll", function() {
+    document.getElementById("scrollTop").classList.toggle("visible", window.scrollY > 400);
+  });
+  function toggleMenu() {
+    var menu = document.getElementById("mobileMenu");
+    var btn = document.getElementById("navHamburger");
+    if (menu.classList.contains("open")) {
+      menu.classList.remove("open");
+      btn.classList.remove("open");
+      document.body.classList.remove("menu-open");
+    } else {
+      menu.classList.add("open");
+      btn.classList.add("open");
+      document.body.classList.add("menu-open");
+    }
+  }
+  function closeMenu() {
+    document.getElementById("mobileMenu").classList.remove("open");
+    document.getElementById("navHamburger").classList.remove("open");
+    document.body.classList.remove("menu-open");
+  }
+</script>
+</body>
+</html>

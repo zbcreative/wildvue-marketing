@@ -18,7 +18,7 @@ Wildvue is currently in pre-launch. Users can join the waitlist at wildvue.com t
 - Pricing: Free tier with monthly credits; Pro plan with unlimited enhancements
 - What it removes: Zoo fences, cage bars, wire mesh, aquarium glass, safari vehicle windows, murky water reflections, floating debris
 - How it works: Upload a photo, tap once, download the barrier-free result
-- Privacy: Photos are processed and deleted from servers within 24 hours. User photos are never used for training without explicit opt-in.
+- Privacy: Your photos are stored securely and privately. User photos are never used for training without explicit opt-in.
 
 ## Wildvue for Venues (B2B)
 
@@ -50,7 +50,7 @@ Yes. Wildvue is built specifically for wildlife photos, so it understands fur te
 There is a free option with a set of credits each month. A Pro plan provides unlimited enhancements.
 
 **Is my original photo kept private?**
-Yes. Photos are processed and deleted from Wildvue servers within 24 hours. Photos are never used for model training without explicit user opt-in.
+Yes. Your photos are stored securely and privately. Photos are never used for model training without explicit user opt-in.
 
 **Does it work for aquarium photos?**
 Yes, including glass, murky water, and floating debris.
